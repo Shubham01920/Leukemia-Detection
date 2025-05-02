@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Revolutionizing medical diagnostics with advanced AI',
+                      'AI-powered blood smear image analysis for leukemia classification',
                       style: TextStyle(
                         fontSize: 14.0,
                         color: Colors.white,
@@ -125,6 +125,57 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 24.0),
 
+            // Classification Types Section
+            const Padding(
+              padding: EdgeInsets.only(left: 4.0, bottom: 12.0),
+              child: Text(
+                'Leukemia Classification Types',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            )
+                .animate()
+                .fadeIn(duration: 600.ms, delay: 900.ms)
+                .slideX(begin: -0.2, end: 0),
+
+            // Classification type boxes
+            InfoBoxList(
+              items: [
+                InfoBoxItem(
+                  icon: Icons.circle,
+                  title: "Benign",
+                  description:
+                      "Normal blood cells without leukemia present. No cancer detected.",
+                ),
+                InfoBoxItem(
+                  icon: Icons.arrow_upward,
+                  title: "Early PreB",
+                  description:
+                      "Early stage of B-cell acute lymphoblastic leukemia. Early intervention recommended.",
+                ),
+                InfoBoxItem(
+                  icon: Icons.arrow_forward,
+                  title: "Pre B",
+                  description:
+                      "Precursor B-cell acute lymphoblastic leukemia. Requires immediate treatment.",
+                ),
+                InfoBoxItem(
+                  icon: Icons.arrow_circle_up,
+                  title: "Pro B",
+                  description:
+                      "Pro-B acute lymphoblastic leukemia. Most aggressive form requiring intensive therapy.",
+                ),
+              ],
+            ).animate().fadeIn(duration: 800.ms, delay: 1100.ms).slide(
+                begin: const Offset(0, 0.3),
+                end: const Offset(0, 0),
+                delay: 1100.ms),
+
+            const SizedBox(height: 36.0),
+
             // Action button
             ElevatedButton.icon(
               onPressed: () {
@@ -135,10 +186,9 @@ class HomePage extends StatelessWidget {
                   ),
                 );
               },
-              icon: const Icon(Icons.play_arrow_rounded,
-                  color: AppColors.primary),
+              icon: const Icon(Icons.upload_outlined, color: AppColors.primary),
               label: const Text(
-                'Start Detection',
+                'Upload Blood Sample for Analysis',
                 style: TextStyle(fontSize: 16, color: AppColors.primary),
               ),
               style: ElevatedButton.styleFrom(
@@ -155,6 +205,28 @@ class HomePage extends StatelessWidget {
                 .scale(delay: 1200.ms)
                 .then(delay: 200.ms)
                 .shimmer(duration: 1200.ms),
+
+            const SizedBox(height: 16.0),
+
+            // Results explanation
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(25),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppColors.lightPurple.withAlpha(50),
+                ),
+              ),
+              child: const Text(
+                'Upload a blood smear image and our AI model will analyze it to detect and classify leukemia type with confidence scores.',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 14.0,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ).animate().fadeIn(duration: 600.ms, delay: 1400.ms),
           ],
         ),
       ),

@@ -410,32 +410,32 @@ class _LoginPageState extends State<LoginPage> {
                                         width: 24,
                                         height: 24,
                                         child: CircularProgressIndicator(
-                                          color: AppColors.lightPurple,
+                                          color: AppColors.primary,
                                           strokeWidth: 3,
                                         ),
                                       )
                                     : const Icon(
                                         Icons.login_rounded,
-                                        color: AppColors.lightPurple,
+                                        color: AppColors.primary,
                                       ),
                                 label: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     AppText.button(
                                       'Login',
-                                      color: AppColors.lightPurple,
+                                      color: AppColors.primary,
                                     ),
                                     const SizedBox(width: 8),
                                     const Icon(
                                       Icons.arrow_forward_rounded,
-                                      color: AppColors.lightPurple,
+                                      color: AppColors.primary,
                                       size: 18,
                                     ),
                                   ],
                                 ),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,
-                                  foregroundColor: AppColors.lightPurple,
+                                  foregroundColor: AppColors.primary,
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 12, horizontal: 16),
                                   shape: RoundedRectangleBorder(

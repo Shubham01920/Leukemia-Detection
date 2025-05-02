@@ -1,0 +1,9 @@
+android {
+    compileSdkVersion 31
+    namespace 'com.a5starcompany.com.ng.tflite_flutter_plus'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+} 
